@@ -3,11 +3,19 @@ import Image from "next/image";
 
 import navbarDiskImage from "../../public/Music-disc.ico"
 import CPmenuImage from "../../public/CP-menu.ico"
+
+import localFont from "@next/font/local";
+
+const myFont = localFont({
+  src: "../../public/W95FA.otf",
+});
+
+
 const Navbar = () => {
   return (
     <header className="font-display border-b border-red-300 flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
       <div className="pl-5">
-        <Link href="/">Klara Keller</Link>
+        <Link className={myFont.className} href="/">KLARA KELLER</Link>
       </div>
 
       <div>
