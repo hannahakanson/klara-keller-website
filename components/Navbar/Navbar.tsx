@@ -22,10 +22,21 @@ const Navbar = () => {
 
       <div className={myFont.className}>
         <ul className="hidden justify-between space-x-12 pr-5 py-5 md:flex md:items-center md:text-sm">
-          <li>Home</li>
-          <li>About</li>
-          <li>Tour</li>
-          <li>Contact</li>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/music">Music</Link>
+          </li>
+          <li>
+            <Link href="/tour">Tour</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
         </ul>
       </div>
 
