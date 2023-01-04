@@ -8,7 +8,7 @@ import ContentList from "../../components/ContentList";
 
 //Fetch the data from sanity
 const query = groq`
-*[_type=='post'] {
+*[_type=='content'] {
     ...,
     author->,
     categories[]->

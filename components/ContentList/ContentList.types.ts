@@ -1,3 +1,5 @@
+import { Content } from "../../typings";
+
 export type ContentListProps = {
-    content: any[];
+    content: Content[];
 }
