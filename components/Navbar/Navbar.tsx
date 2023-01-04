@@ -9,9 +9,12 @@ import CPmenuImage from "../../public/CP-menu.ico";
 import localFont from "@next/font/local";
 import { useRef } from "react";
 
+//Font
 const myFont = localFont({
   src: "../../public/fonts/W95FA.otf",
 });
+
+
 
 const Navbar = () => {
   // Ref to store a reference to the menu
@@ -24,8 +27,16 @@ const Navbar = () => {
     }
   };
 
+  const menuLinks = [
+    { url: "/", title: "Home" },
+    { url: "/music", title: "Music" },
+    { url: "/tour", title: "Tour" },
+    { url: "/about", title: "About" },
+    { url: "/contact", title: "Contact" },
+  ];
+
   return (
-    <div className="font-display flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
+    <div className="font-display relative flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
       <div className="pl-5">
         <Link className={myFont.className} href="/">
           KLARA KELLER
@@ -33,25 +44,15 @@ const Navbar = () => {
       </div>
 
       <div className={myFont.className}>
-        <div className="block w-full">
+        <div className="block w-full bg-black">
           <ul
-            className="reset-list hidden absolute top-50 right-0 flex-col justify-between py-5 md:flex md:flex-row md:items-center md:text-sm md:static md:top-0"
+            className="z-50 reset-list hidden absolute top-50 right-1/2 flex-col py-5 md:justify-between md:flex md:flex-row md:items-center md:text-sm md:static md:top-0"
             ref={menuRef}>
-            <li className="space-x-12 md:px-4">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="space-x-12 md:px-4">
-              <Link href="/music">Music</Link>
-            </li>
-            <li className="space-x-12 md:px-4">
-              <Link href="/tour">Tour</Link>
-            </li>
-            <li className="space-x-12 md:px-4">
-              <Link href="/about">About</Link>
-            </li>
-            <li className="space-x-12 md:px-4">
-              <Link href="/contact">Contact</Link>
-            </li>
+            {menuLinks.map(link => 
+                <li className="space-x-12 md:px-4">
+                  <Link href={link.url}>{link.title}</Link>
+                </li>
+            )}
           </ul>
         </div>
       </div>
