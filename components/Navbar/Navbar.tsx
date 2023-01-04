@@ -13,7 +13,7 @@ const myFont = localFont({
 
 const Navbar = () => {
   return (
-    <header className="font-display border-b border-red-300 flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
+    <header className="font-display flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
       <div className="pl-5">
         <Link className={myFont.className} href="/">
           KLARA KELLER
@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul className="hidden justify-between space-x-12 pr-5 py-5 md:flex md:items-center md:text-sm">
           <li>Home</li>
           <li>About</li>
-          <li>Tours</li>
+          <li>Tour</li>
           <li>Contact</li>
         </ul>
       </div>
