@@ -8,10 +8,8 @@ import ContentList from "../../components/ContentList";
 
 //Fetch the data from sanity
 const query = groq`
-*[_type=='content'] {
+*[_type=='heroContent'] {
     ...,
-    author->,
-    categories[]->
 } | order(_createdAt desc)`;
 
 export default async function HomePage() {
