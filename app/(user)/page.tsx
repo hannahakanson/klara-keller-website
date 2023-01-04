@@ -33,7 +33,6 @@ export default async function HomePage() {
     <div>
       {/* Content goes here */}
       <ContentList content={content} />
-      Real content
     </div>
   );
 }
