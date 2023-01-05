@@ -5,8 +5,10 @@ const ContactList = ({ contacts }: ContactListProps) => {
     <div>
       {contacts.map((contact) => (
         <div key={contact._id} className="flex flex-col pb-4">
-          <div>{contact.title}</div>
+          <div className="text-xs">{contact.title}</div>
           <div>{contact.name}</div>
+          <div className="text-xs">{contact.email}</div>
+          <div className="text-xs">{contact.number}</div>
         </div>
       ))}
     </div>
