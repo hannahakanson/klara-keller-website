@@ -4,7 +4,7 @@ import { client } from "../../../lib/sanity.client";
 
 import PreviewSuspense from "../../../components/PreviewSuspense";
 import PreviewContent from "../../../components/PreviewContent";
-import ContactList from "../../../components/ContactList/ContactList";
+import ContactList from "../../../components/ContactList";
 
 //Fetch the data from sanity
 const query = groq`

@@ -34,6 +34,14 @@ interface Contact extends Base {
   email: string;
 }
 
+interface Concert extends Base {
+  author: Author[];
+  title: string;
+  link: string;
+  location: string;
+  date: date;
+}
+
 interface Image {
     _type: "image";
     _asset: Reference;
