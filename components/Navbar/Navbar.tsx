@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className={myFont.className}>
         <div className="block w-full">
           <ul
-            className={`z-40 fixed top-0 left-0 w-full h-full bg-gray-900 py-5 md:justify-between md:flex-row md:items-center md:text-sm md:static md:top-0 md:bg-transparent ${
+            className={`z-40 fixed top-0 left-0 w-full h-full bg-gray-900 py-5 md:justify-between md:flex md:flex-row md:items-center md:text-sm md:static md:top-0 md:bg-transparent ${
               isMenuOpen
                 ? "flex flex-col justify-center items-center"
                 : "hidden"
