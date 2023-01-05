@@ -18,7 +18,7 @@ const Navbar = () => {
   // Ref to store a reference to the menu
   const menuRef = useRef<HTMLUListElement>(null);
 
-  const openMenu = () => {
+  const handleToggleMenu = () => {
     // Toggle the "hidden" class on the menu if ref is not null
     if (menuRef.current) {
       menuRef.current.classList.toggle("hidden");
@@ -51,7 +51,7 @@ const Navbar = () => {
             ref={menuRef}>
             {menuLinks.map((link, i) => (
               <li key={i} className="space-x-12 md:px-4">
-                <Link href={link.url}>{link.title}</Link>
+                <Link onClick={handleToggleMenu} href={link.url}>{link.title}</Link>
               </li>
             ))}
           </ul>
@@ -69,7 +69,7 @@ const Navbar = () => {
       </div>
 
       {/* Menu image */}
-      <div onClick={openMenu} className="z-50 block md:hidden">
+      <div onClick={handleToggleMenu} className="z-50 block md:hidden">
         <Image src={CPmenuImage} alt="Menu" width={30} height={30} />
       </div>
     </div>
