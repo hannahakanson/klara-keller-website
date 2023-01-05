@@ -7,7 +7,7 @@ import navbarDiskImage from "../../public/favicon.ico";
 import CPmenuImage from "../../public/CP-menu.ico";
 
 import localFont from "@next/font/local";
-import { useRef } from "react";
+import { useState } from "react";
 
 //Font
 const myFont = localFont({
@@ -15,15 +15,9 @@ const myFont = localFont({
 });
 
 const Navbar = () => {
-  // Ref to store a reference to the menu
-  const menuRef = useRef<HTMLUListElement>(null);
 
-  const handleToggleMenu = () => {
-    // Toggle the "hidden" class on the menu if ref is not null
-    if (menuRef.current) {
-      menuRef.current.classList.toggle("hidden");
-    }
-  };
+  //State for menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   //Menu links
   const menuLinks = [
@@ -47,11 +41,18 @@ const Navbar = () => {
       <div className={myFont.className}>
         <div className="block w-full">
           <ul
-            className="z-40 fixed top-0 left-0 w-full h-full bg-gray-900 py-5 flex flex-col items-center justify-center md:justify-between md:flex-row md:items-center md:text-sm md:static md:top-0 md:bg-transparent"
-            ref={menuRef}>
+            className={`z-40 fixed top-0 left-0 w-full h-full bg-gray-900 py-5 md:justify-between md:flex-row md:items-center md:text-sm md:static md:top-0 md:bg-transparent ${
+              isMenuOpen
+                ? "flex flex-col justify-center items-center"
+                : "hidden"
+            }`}>
             {menuLinks.map((link, i) => (
               <li key={i} className="space-x-12 md:px-4">
-                <Link onClick={handleToggleMenu} href={link.url}>{link.title}</Link>
+                <Link
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  href={link.url}>
+                  {link.title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -69,7 +70,9 @@ const Navbar = () => {
       </div>
 
       {/* Menu image */}
-      <div onClick={handleToggleMenu} className="z-50 block md:hidden">
+      <div
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="z-50 block md:hidden">
         <Image src={CPmenuImage} alt="Menu" width={30} height={30} />
       </div>
     </div>
