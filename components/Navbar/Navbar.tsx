@@ -14,8 +14,6 @@ const myFont = localFont({
   src: "../../public/fonts/W95FA.otf",
 });
 
-
-
 const Navbar = () => {
   // Ref to store a reference to the menu
   const menuRef = useRef<HTMLUListElement>(null);
@@ -27,6 +25,7 @@ const Navbar = () => {
     }
   };
 
+  //Menu links
   const menuLinks = [
     { url: "/", title: "Home" },
     { url: "/music", title: "Music" },
@@ -36,27 +35,30 @@ const Navbar = () => {
   ];
 
   return (
+    // Header
     <div className="font-display relative flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
-      <div className="pl-5">
+      <div className="pl-5 z-50 relative">
         <Link className={myFont.className} href="/">
           KLARA KELLER
         </Link>
       </div>
 
+      {/* Menu */}
       <div className={myFont.className}>
-        <div className="block w-full bg-black">
+        <div className="block w-full">
           <ul
-            className="z-50 reset-list hidden absolute top-50 right-1/2 flex-col py-5 md:justify-between md:flex md:flex-row md:items-center md:text-sm md:static md:top-0"
+            className="z-40 fixed top-0 left-0 w-full h-full bg-gray-900 py-5 flex flex-col items-center justify-center md:justify-between md:flex-row md:items-center md:text-sm md:static md:top-0 md:bg-transparent"
             ref={menuRef}>
-            {menuLinks.map(link => 
-                <li className="space-x-12 md:px-4">
-                  <Link href={link.url}>{link.title}</Link>
-                </li>
-            )}
+            {menuLinks.map((link, i) => (
+              <li key={i} className="space-x-12 md:px-4">
+                <Link href={link.url}>{link.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
+      {/* Spotify image */}
       <div className="hidden md:block">
         <Image
           src={navbarDiskImage}
@@ -66,7 +68,8 @@ const Navbar = () => {
         />
       </div>
 
-      <div onClick={openMenu} className="block md:hidden">
+      {/* Menu image */}
+      <div onClick={openMenu} className="z-50 block md:hidden">
         <Image src={CPmenuImage} alt="Menu" width={30} height={30} />
       </div>
     </div>
