@@ -28,6 +28,7 @@ interface Author extends Base {
 
 interface Contact extends Base {
   author: Author[];
+  title: string;
   name: string;
   number: string;
   email: string;

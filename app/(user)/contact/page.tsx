@@ -23,11 +23,12 @@ export default async function ContactPage() {
     );
   }
 
+  //Fetch contacts
   const contacts = await client.fetch(query);
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div>
+    <div className="flex items-center justify-center">
       {/* Contacts goes here */}
       <ContactList contacts={contacts} />
     </div>
