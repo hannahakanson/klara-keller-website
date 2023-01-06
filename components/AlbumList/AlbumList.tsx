@@ -8,7 +8,7 @@ const AlbumList = ({ albums }: AlbumListProps) => {
   return (
     <div>
       {albums.map((album) => (
-        <Link href={album.link}>
+        <Link href={album.link} target="_blank">
           <div key={album._id} className="flex flex-col pb-4">
             <div className="text-xs">{album.title}</div>
             <div className="relative w-full h-60 my-6">
