@@ -13,7 +13,7 @@ const TourList = ({ tour }: TourListProps) => {
             <div>{concert.title}</div>
             <div>{concert.date}</div>
           </div>
-          <Link className="text-xs border p-2 hover:text-black hover:bg-slate-50" href={concert.link}>
+          <Link className="text-xs border p-2 hover:text-black hover:bg-slate-50" href={concert.link} target="_blank">
             BOOK TICKET
           </Link>
         </div>
