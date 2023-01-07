@@ -9,8 +9,8 @@ const AlbumList = ({ albums }: AlbumListProps) => {
     <div className="gap-10 items-center justify-center flex flex-wrap flex-col md:flex-row">
       {albums.map((album) => (
         <Link href={album.link} target="_blank" key={album._id}>
-          <div className="relative h-40 m-2 p-2 rounded-md hover:scale-110 transition ease-in-out delay-50 hover:-translate-y-1">
-            <div>
+          <div className="relative h-full m-4 p-2 rounded-md hover:scale-110 transition ease-in-out delay-50 hover:-translate-y-1">
+            <div className="relative">
               <Image
                 src={makeUrl(album.mainImage).url()}
                 alt={album.title}
@@ -18,6 +18,9 @@ const AlbumList = ({ albums }: AlbumListProps) => {
                 height={200}
                 className="object-contain"
               />
+              <div className="hover:visible invisible absolute inset-0 flex items-center justify-center text-white font-bold text-lg bg-opacity-75 bg-black">
+                {album.title}
+              </div>
             </div>
           </div>
         </Link>
