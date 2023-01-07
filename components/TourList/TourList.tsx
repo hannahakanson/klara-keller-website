@@ -3,19 +3,25 @@ import { TourListProps } from "./TourList.types";
 
 const TourList = ({ tour }: TourListProps) => {
   return (
-    <div className="w-2/3">
+    <div className="w-full md:w-2/3">
       {tour.map((concert) => (
         <div
           key={concert._id}
-          className="border p-4 flex mb-4 flex-row items-center justify-between">
-          <div className="flex flex-row items-center gap-4">
-            <div>{concert.location}</div>
-            <div>{concert.title}</div>
-            <div>{concert.date}</div>
+          className="border-t border-b p-4 flex flex-row items-center justify-between">
+          <div className="flex flex-col">
+              <div>{concert.location}</div>
+              <div className="italic">{concert.title}</div>
+            </div>
+
+            <div className="flex gap-4">
+              {concert.date}
+              <Link
+                className="text-xs border p-2 hover:text-black hover:bg-slate-50"
+                href={concert.link}
+                target="_blank">
+                BOOK TICKET
+              </Link>
           </div>
-          <Link className="text-xs border p-2 hover:text-black hover:bg-slate-50" href={concert.link} target="_blank">
-            BOOK TICKET
-          </Link>
         </div>
       ))}
     </div>
@@ -23,3 +29,4 @@ const TourList = ({ tour }: TourListProps) => {
 };
 
 export default TourList;
+
