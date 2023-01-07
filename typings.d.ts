@@ -26,6 +26,22 @@ interface Author extends Base {
     slug: Slug;
 }
 
+interface Contact extends Base {
+  author: Author[];
+  title: string;
+  name: string;
+  number: string;
+  email: string;
+}
+
+interface Concert extends Base {
+  author: Author[];
+  title: string;
+  link: string;
+  location: string;
+  date: date;
+}
+
 interface Image {
     _type: "image";
     _asset: Reference;
