@@ -1,8 +1,36 @@
+import { previewData } from "next/headers";
+import { groq } from "next-sanity";
+import { client } from "../../../lib/sanity.client";
 
-export default async function MusicPage() {
+import PreviewSuspense from "../../../components/PreviewSuspense";
+import PreviewContent from "../../../components/PreviewContent";
+import AlbumList from "../../../components/AlbumList";
+
+//Fetch the data from sanity
+const query = groq`
+*[_type=='album'] {
+    ...,
+} | order(_createdAt desc)`;
+
+export default async function AlbumPage() {
   //IF YOU'RE IN PREVIEW MODE
-  
+  if (previewData()) {
     return (
-      <div>MUSIC PAGE</div>
+      <PreviewSuspense fallback={<p>Loading preview</p>}>
+        {/* Preview goes here */}
+        <PreviewContent query={query} />
+      </PreviewSuspense>
     );
+  }
+
+  //Fetch Albums
+  const albums = await client.fetch(query);
+
+  //IF YOU'RE NOT IN PREVIEW MODE
+  return (
+    <div className="flex items-center justify-center">
+      {/* Albums goes here */}
+      <AlbumList albums={albums} />
+    </div>
+  );
 }

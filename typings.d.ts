@@ -42,6 +42,13 @@ interface Concert extends Base {
   date: date;
 }
 
+interface Album extends Base {
+  author: Author[];
+  mainImage: Image;
+  title: string;
+  link: string;
+}
+
 interface Image {
     _type: "image";
     _asset: Reference;
