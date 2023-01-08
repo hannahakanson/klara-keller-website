@@ -56,6 +56,7 @@ interface Bio extends Base {
     author: Author;
     title: string;
     body: Block[];
+    mainImage: Image;
 }
 
 interface Reference {
