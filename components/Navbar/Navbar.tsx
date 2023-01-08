@@ -6,13 +6,7 @@ import Image from "next/image";
 import navbarDiskImage from "../../public/favicon.ico";
 import CPmenuImage from "../../public/CP-menu.ico";
 
-import localFont from "@next/font/local";
 import { useState } from "react";
-
-//Font
-const myFont = localFont({
-  src: "../../public/fonts/W95FA.otf",
-});
 
 const Navbar = () => {
 
@@ -32,13 +26,13 @@ const Navbar = () => {
     // Header
     <div className="font-display relative flex items-center justify-between mb-1 space-x-2 pr-5 py-5">
       <div className="pl-5 z-50 relative">
-        <Link className={myFont.className} href="/">
+        <Link href="/">
           KLARA KELLER
         </Link>
       </div>
 
       {/* Menu */}
-      <div className={myFont.className}>
+      <div>
         <div className="block w-full">
           <ul
             className={`z-40 fixed top-0 left-0 w-full h-full bg-gray-900 py-5 md:justify-between md:flex md:flex-row md:items-center md:text-sm md:static md:top-0 md:bg-transparent ${

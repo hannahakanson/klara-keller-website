@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="md:flex md:justify-center">
+    <html className="md:flex md:justify-center bg-zinc-900">
       <body className="md:w-3/4">
         {" "}
         <header>
