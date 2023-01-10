@@ -1,27 +1,27 @@
 import { imageOptimizer } from "next/dist/server/image-optimizer";
-import { Image, Reference, Slug } from "sanity";
+import { Image, Reference } from "sanity";
 
 type Base = {
-    _createdAt: string;
-    _id: string;
-    _rev: string;
-    _type: string;
-    _updatedAt: string;
-}
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: string;
+  _updatedAt: string;
+};
 
 interface Content extends Base {
-    author: Author[];
-    body: Block[];
-    categories: Category[];
-    mainImage: Image;
-    title: string;
-    description: string;
+  author: Author[];
+  body: Block[];
+  categories: Category[];
+  mainImage: Image;
+  title: string;
+  description: string;
 }
 
 interface Author extends Base {
-    bio: Block[];
-    image: Image;
-    name: string;
+  bio: Block[];
+  image: Image;
+  name: string;
 }
 
 interface Contact extends Base {
@@ -47,16 +47,11 @@ interface Album extends Base {
   link: string;
 }
 
-interface Image {
-    _type: "image";
-    _asset: Reference;
-}
-
 interface Bio extends Base {
-    author: Author;
-    title: string;
-    body: Block[];
-    mainImage: Image;
+  author: Author;
+  title: string;
+  body: Block[];
+  mainImage: Image;
 }
 
 interface News extends Base {
@@ -67,37 +62,50 @@ interface News extends Base {
   link: string;
 }
 
+interface Milestones extends Base {
+  author: Author;
+  title: string;
+  year: number;
+  mainImage: Image;
+  body: Block[];
+}
+
+interface Image {
+  _type: "image";
+  _asset: Reference;
+}
+
 interface Reference {
-    _ref: string;
-    _type: "reference";
+  _ref: string;
+  _type: "reference";
 }
 
 interface Block {
-    _key: string;
-    _type: "block";
-    children: Span[];
-    markDefs: any[];
-    style: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote"
+  _key: string;
+  _type: "block";
+  children: Span[];
+  markDefs: any[];
+  style: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
 }
 
 interface Span {
-    _key: string;
-    _type: "span";
-    marks: string[];
-    text: string;
+  _key: string;
+  _type: "span";
+  marks: string[];
+  text: string;
 }
 
 interface Category extends Base {
-    description: string;
-    title: string;
+  description: string;
+  title: string;
 }
 
 interface MainImage {
-    _type: "image";
-    asset: Reference;
+  _type: "image";
+  asset: Reference;
 }
 
 interface Title {
-    _type: "string";
-    current: string;
+  _type: "string";
+  current: string;
 }
