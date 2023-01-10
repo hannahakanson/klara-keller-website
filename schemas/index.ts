@@ -1,6 +1,6 @@
 import blockContent from "./blockContent";
 import heroContent from "./heroContent";
-import newsContent from "./newsContent";
+import news from "./news";
 import milestone from "./milestone";
 import concert from "./concert";
 import contact from "./contact";
@@ -10,7 +10,7 @@ import author from "./author";
 
 export const schemaTypes = [
   heroContent,
-  newsContent,
+  news,
   concert,
   author,
   blockContent,
