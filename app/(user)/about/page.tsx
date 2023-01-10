@@ -5,12 +5,18 @@ import { client } from "../../../lib/sanity.client";
 import PreviewSuspense from "../../../components/PreviewSuspense";
 import PreviewContent from "../../../components/PreviewContent";
 import Bio from "../../../components/Bio";
+import Milestones from "../../../components/Milestones";
 
 //Fetch the data from sanity
 const query = groq`
 *[_type=='bio'] {
     ...,
 } | order(_createdAt desc)`;
+
+const milestonesQuery = groq`
+*[_type=='milestone'] {
+    ...,
+} | order(year asc)`;
 
 export default async function BioPage() {
   //IF YOU'RE IN PREVIEW MODE
@@ -25,12 +31,17 @@ export default async function BioPage() {
 
   //Fetch Bios
   const bios = await client.fetch(query);
+  //Fetch Milestones
+  const milestones = await client.fetch(milestonesQuery);
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col justify-center">
       {/* Bios goes here */}
       <Bio bios={bios} />
+
+      {/* Milestones goes here */}
+      <Milestones milestones={milestones} />
     </div>
   );
 }
