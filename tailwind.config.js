@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "klara-pink": "#C56C73",
+      },
     },
   },
   plugins: [require("daisyui")],
