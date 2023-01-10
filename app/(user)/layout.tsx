@@ -13,7 +13,9 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        {children}
+        <div className="flex justify-center">
+          <div className="w-2/3">{children}</div>
+        </div>
       </body>
     </html>
   );

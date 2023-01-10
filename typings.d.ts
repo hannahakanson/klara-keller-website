@@ -14,7 +14,6 @@ interface Content extends Base {
     body: Block[];
     categories: Category[];
     mainImage: Image;
-    slug: Slug;
     title: string;
     description: string;
 }
@@ -23,7 +22,6 @@ interface Author extends Base {
     bio: Block[];
     image: Image;
     name: string;
-    slug: Slug;
 }
 
 interface Contact extends Base {
@@ -54,14 +52,16 @@ interface Image {
     _asset: Reference;
 }
 
+interface Bio extends Base {
+    author: Author;
+    title: string;
+    body: Block[];
+    mainImage: Image;
+}
+
 interface Reference {
     _ref: string;
     _type: "reference";
-}
-
-interface Slug {
-    _type: "slug";
-    current: string;
 }
 
 interface Block {
