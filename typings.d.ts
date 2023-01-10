@@ -59,6 +59,14 @@ interface Bio extends Base {
     mainImage: Image;
 }
 
+interface News extends Base {
+  author: Author;
+  title: string;
+  body: Block[];
+  mainImage: Image;
+  link: string;
+}
+
 interface Reference {
     _ref: string;
     _type: "reference";
