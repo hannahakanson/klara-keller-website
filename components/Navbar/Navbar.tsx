@@ -4,11 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   //State for menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  //Disable scroll when mobile menu is open
+   useEffect(() => {
+     isMenuOpen ? 
+       document.body.classList.add("overflow-hidden")
+     :
+       document.body.classList.remove("overflow-hidden");
+     }, [isMenuOpen]);
 
   //Menu links
   const menuLinks = [
