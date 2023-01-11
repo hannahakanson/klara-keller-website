@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         "klara-pink": "#C56C73",
+        "klara-purple": "#4341B5",
       },
     },
   },
