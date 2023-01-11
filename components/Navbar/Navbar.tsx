@@ -3,20 +3,21 @@
 import Link from "next/link";
 import Image from "next/image";
 
-
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
   //State for menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  //Disable scroll when mobile menu is open
-   useEffect(() => {
-     isMenuOpen ? 
-       document.body.classList.add("overflow-hidden")
-     :
-       document.body.classList.remove("overflow-hidden");
-     }, [isMenuOpen]);
+  //Check if user is on mobile
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+  //Disable scroll only on mobile when menu is open
+  useEffect(() => {
+    isMenuOpen && isMobile
+      ? document.body.classList.add("overflow-hidden")
+      : document.body.classList.remove("overflow-hidden");
+  }, [isMenuOpen, isMobile]);
 
   //Menu links
   const menuLinks = [
@@ -67,7 +68,12 @@ const Navbar = () => {
       <div
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="z-50 block flex-none mt-2 md:hidden">
-        <Image src="/../public/Klara-mobile-menu.png" alt="menu" width={40} height={30}/>
+        <Image
+          src="/../public/Klara-mobile-menu.png"
+          alt="menu"
+          width={40}
+          height={30}
+        />
       </div>
     </div>
   );

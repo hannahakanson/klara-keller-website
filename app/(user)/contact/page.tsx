@@ -28,7 +28,7 @@ export default async function ContactPage() {
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center md:w-2/3">
       {/* Contacts goes here */}
       <ContactList contacts={contacts} />
     </div>
