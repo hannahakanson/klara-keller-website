@@ -8,8 +8,24 @@
   font-weight: 700;
 }
 
-body {
-    color: #fff;
-    font-family: "W95FA";
+@font-face {
+  font-family: "Alpha Clouds";
+  src: url("../public/fonts/Alphasmoke.ttf") format("truetype");
+  font-weight: 700;
 }
 
+body {
+  color: #fff;
+  font-family: "W95FA";
+}
+
+header {
+  font-family: "Alpha Clouds", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Alpha Clouds", sans-serif;
+}

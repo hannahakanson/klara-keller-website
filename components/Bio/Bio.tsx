@@ -10,7 +10,7 @@ const Bio = ({ bios }: BioProps) => {
         <div className="flex flex-col pb-4">
           <div className="flex flex-col pb-4 relative">
             <div className="flex">
-              <h2>{bio.title}</h2>
+              <h2 className="text-3xl">{bio.title}</h2>
               {/* <Image
                 src={makeUrl(bio.mainImage).url()}
                 alt={bio.title}
