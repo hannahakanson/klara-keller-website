@@ -15,11 +15,17 @@
 }
 
 body {
-    color: #fff;
-    font-family: "W95FA";
+  color: #fff;
+  font-family: "W95FA";
 }
 
 header {
-    font-family: "Alpha Clouds", sans-serif;
+  font-family: "Alpha Clouds", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Alpha Clouds", sans-serif;
+}

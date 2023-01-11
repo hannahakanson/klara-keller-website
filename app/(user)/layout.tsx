@@ -7,14 +7,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="md:flex md:justify-center">
-      <body className="md:w-3/4 min-h-screen bg-klara-pink">
+    <html className="md:flex md:justify-center bg-klara-pink">
+      <body className="md:w-3/4 min-h-screen bg-klara-pink pb-10 ">
         {" "}
         <header>
           <Navbar />
         </header>
         <div className="flex justify-center">
-          <div className="w-2/3 pb-10">{children}</div>
+          <div className="w-full mt-4 px-10 md:w-2/3">{children}</div>
         </div>
       </body>
     </html>

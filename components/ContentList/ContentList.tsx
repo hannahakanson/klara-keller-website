@@ -8,15 +8,15 @@ const ContentList = ({ content }: ContentListProps) => {
   console.log(content.length);
 
   return (
-    <div>
+    <div className="heroImage bg-slate-200">
       {/* Content */}
       {content.map((content) => (
         <div key={content._id}>
-          <div className="relative w-full h-60 my-6">
+          <div className="relative w-full h-96 my-6">
             <Image
               src={makeUrl(content.mainImage).url()}
               alt={content.title}
-              className="object-contain"
+              className="object-cover"
               fill
             />
           </div>
