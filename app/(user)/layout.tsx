@@ -9,12 +9,12 @@ export default function RootLayout({
 }) {
   return (
     <html className="md:flex md:justify-center bg-klara-pink">
-      <body className="md:w-3/4 min-h-screen bg-klara-pink">
+      <body className="md:w-3/4 min-h-screen bg-klara-pink relative">
         {" "}
         <header>
           <Navbar />
         </header>
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-40">
           <div className="w-full mt-4 px-10 md:w-2/3">{children}</div>
         </div>
         <Footer />

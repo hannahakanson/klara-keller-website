@@ -3,8 +3,8 @@ import { BsSpotify, BsFacebook, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
     return (
-      <div className="flex mt-6">
-        <footer className="bg-klara-purple p-4 bottom-0 w-screen md:bg-transparent">
+      <div className="flex justify-center mt-6">
+        <footer className="absolute bg-transparent p-4 bottom-0 w-screen">
           <div className="gap-4 flex justify-center mx-auto items-center">
             <Link href="https://www.instagram.com/klarakeller/" target="_blank">
               <BsInstagram size={40} />
