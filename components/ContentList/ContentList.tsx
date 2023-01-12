@@ -17,6 +17,7 @@ const ContentList = ({ content }: ContentListProps) => {
               src={makeUrl(content.mainImage).url()}
               alt={content.title}
               className="object-cover"
+              priority={true}
               fill
             />
           </div>
