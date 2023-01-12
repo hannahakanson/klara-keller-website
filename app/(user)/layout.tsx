@@ -8,14 +8,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="md:flex md:justify-center bg-klara-pink">
-      <body className="md:w-3/4 min-h-screen bg-klara-pink relative">
+    <html className="bg-klara-pink">
+      <body className="min-h-screen bg-klara-pink relative">
         {" "}
         <header>
           <Navbar />
         </header>
         <div className="flex justify-center mb-40">
-          <div className="w-full mt-4 px-10 md:w-2/3">{children}</div>
+          <div className="w-full mt-4 px-10 md:w-2/5">{children}</div>
         </div>
         <Footer />
       </body>
