@@ -14,7 +14,7 @@ const query = groq`
 } | order(_createdAt desc)`;
 
 const newsQuery = groq`
-*[_type=='news'] {
+*[_type=='news'][0...3] {
     ...,
 } | order(_createdAt desc)`;
 
