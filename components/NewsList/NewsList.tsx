@@ -8,7 +8,7 @@ const NewsList = ({ news }: NewsListProps) => {
     <div className="newsList">
       {/* News */}
       {news.map((news) => (
-        <div key={news._id} className="w-full h-96 my-6 flex flex-col pb-2 border-b">
+        <div key={news._id} className="w-full h-96 my-6 flex flex-col pb-2 mb-20 border-b">
           <div className="text-xs opacity-50">{news._updatedAt}</div>
           <h2 className="text-2xl mb-2">{news.title}</h2>
           <p className="text-sm">
