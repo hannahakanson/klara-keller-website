@@ -8,7 +8,7 @@ import Bio from "../../../components/Bio";
 import Milestones from "../../../components/Milestones";
 
 //Fetch the data from sanity
-const query = groq`
+const bioQuery = groq`
 *[_type=='bio'] {
     ...,
 } | order(_createdAt desc)`;
@@ -24,13 +24,13 @@ export default async function BioPage() {
     return (
       <PreviewSuspense fallback={<p>Loading preview</p>}>
         {/* Preview goes here */}
-        <PreviewContent query={query} />
+        <PreviewContent bioQuery={bioQuery} milestonesQuery={milestonesQuery} />
       </PreviewSuspense>
     );
   }
 
   //Fetch Bios
-  const bios = await client.fetch(query);
+  const bios = await client.fetch(bioQuery);
   //Fetch Milestones
   const milestones = await client.fetch(milestonesQuery);
 
