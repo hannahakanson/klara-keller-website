@@ -1,3 +1,9 @@
 export type PreviewContentProps = {
-  query: string;
-};
+  newsQuery?: string | undefined
+  heroQuery?: string | undefined
+  contactQuery?: string | undefined
+  milestonesQuery?: string | undefined
+  bioQuery?: string | undefined
+  albumQuery?: string | undefined
+  concertQuery?: string | undefined
+}

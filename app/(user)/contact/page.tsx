@@ -7,7 +7,7 @@ import PreviewContent from "../../../components/PreviewContent";
 import ContactList from "../../../components/ContactList";
 
 //Fetch the data from sanity
-const query = groq`
+const contactQuery = groq`
 *[_type=='contact'] {
     ...,
 } | order(_createdAt desc)`;
@@ -18,13 +18,13 @@ export default async function ContactPage() {
     return (
       <PreviewSuspense fallback={<p>Loading preview</p>}>
         {/* Preview goes here */}
-        <PreviewContent query={query} />
+        <PreviewContent contactQuery={contactQuery} />
       </PreviewSuspense>
     );
   }
 
   //Fetch contacts
-  const contacts = await client.fetch(query);
+  const contacts = await client.fetch(contactQuery);
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (

@@ -8,9 +8,12 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   //State for menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+  
 
-  //Check if user is on mobile
-  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+  useEffect(() => {
+       setIsMobile(window.matchMedia("(max-width: 600px)").matches)
+  }, [])
 
   //Disable scroll only on mobile when menu is open
   useEffect(() => {
