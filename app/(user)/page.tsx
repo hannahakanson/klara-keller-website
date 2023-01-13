@@ -8,7 +8,7 @@ import ContentList from "../../components/ContentList";
 import NewsList from "../../components/NewsList";
 
 //Fetch the data from sanity
-const query = groq`
+const heroQuery = groq`
 *[_type=='heroContent'] {
     ...,
 } | order(_createdAt desc)`;
@@ -18,19 +18,21 @@ const newsQuery = groq`
     ...,
 } | order(_createdAt desc)`;
 
+
 export default async function HomePage() {
+  const content = await client.fetch(heroQuery);
+  const news = await client.fetch(newsQuery);
+
   //IF YOU'RE IN PREVIEW MODE
   if (previewData()) {
     return (
       <PreviewSuspense fallback={<p>Loading preview</p>}>
-        {/* Preview goes here */}
-        <PreviewContent query={query} />
+        {/* Preview for heroContent and news goes here */}
+        <PreviewContent heroQuery={heroQuery} newsQuery={newsQuery} />
+
       </PreviewSuspense>
     );
   }
-
-  const content = await client.fetch(query);
-  const news = await client.fetch(newsQuery);
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (

@@ -5,10 +5,9 @@ import { ContentListProps } from "./ContentList.types";
 
 
 const ContentList = ({ content }: ContentListProps) => {
-  console.log(content.length);
 
   return (
-    <div className="heroImage bg-slate-200">
+    <div className="heroImage">
       {/* Content */}
       {content.map((content) => (
         <div key={content._id}>

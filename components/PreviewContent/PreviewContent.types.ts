@@ -1,3 +1,4 @@
 export type PreviewContentProps = {
-  query: string;
-};
+  newsQuery?: string | undefined,
+  heroQuery?: string | undefined
+}
