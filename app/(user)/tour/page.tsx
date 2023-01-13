@@ -7,7 +7,7 @@ import PreviewContent from "../../../components/PreviewContent";
 import TourList from "../../../components/TourList";
 
 //Fetch the data from sanity
-const query = groq`
+const concertQuery = groq`
 *[_type=='concert'] {
     ...,
 } | order(_createdAt desc)`;
@@ -18,13 +18,13 @@ export default async function TourPage() {
     return (
       <PreviewSuspense fallback={<p>Loading preview</p>}>
         {/* Preview goes here */}
-        <PreviewContent query={query} />
+        <PreviewContent concertQuery={concertQuery} />
       </PreviewSuspense>
     );
   }
 
   //Fetch tour
-  const tour = await client.fetch(query);
+  const tour = await client.fetch(concertQuery);
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (

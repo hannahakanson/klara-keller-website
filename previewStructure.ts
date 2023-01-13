@@ -9,7 +9,7 @@ export const getDefaultDocumentNode: DefaultDocumentNodeResolver = (
 ) => {
 
   switch(schemaType) {
-  case "heroContent" || "news":
+  case "heroContent" && "news":
     route = ""
     break;
   case "album":
@@ -21,7 +21,7 @@ case "concert":
   case "contact":
     route = "/contact"
     break;
-case "bio" || "milestone":
+case "bio" && "milestone":
     route = "/about"
     break;
     
@@ -36,7 +36,7 @@ case "bio" || "milestone":
         .options({
           url: `${
             process.env.NEXT_PUBLIC_VERCEL_API || "http://localhost:3000"
-          }${route}/api/preview`,
+          }/api/preview`,
           defaultSize: "desktop",
           reload: {
             button: true,

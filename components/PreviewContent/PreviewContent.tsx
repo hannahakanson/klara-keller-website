@@ -9,6 +9,8 @@ import NewsList from "../NewsList";
 import ContactList from "../ContactList";
 import Bio from "../Bio";
 import Milestones from "../Milestones";
+import AlbumList from "../AlbumList";
+import TourList from "../TourList";
 
 export default function PreviewContent({
   newsQuery,
@@ -16,6 +18,8 @@ export default function PreviewContent({
   contactQuery,
   milestonesQuery,
   bioQuery,
+  albumQuery,
+  concertQuery,
 }: PreviewContentProps) {
   if (heroQuery && newsQuery) {
     const content = usePreview(null, heroQuery);
@@ -49,5 +53,25 @@ export default function PreviewContent({
       </>
     );
   }
+
+   if (albumQuery) {
+     const albums = usePreview(null, albumQuery);
+
+     return (
+       <>
+         <AlbumList albums={albums} />
+       </>
+     );
+   }
+
+   if (concertQuery) {
+     const tour = usePreview(null, concertQuery);
+
+     return (
+       <>
+         <TourList tour={tour} />
+       </>
+     );
+   }
   return null;
 }

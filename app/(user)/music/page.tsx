@@ -7,7 +7,7 @@ import PreviewContent from "../../../components/PreviewContent";
 import AlbumList from "../../../components/AlbumList";
 
 //Fetch the data from sanity
-const query = groq`
+const albumQuery = groq`
 *[_type=='album'] {
     ...,
 } | order(_createdAt desc)`;
@@ -18,13 +18,13 @@ export default async function AlbumPage() {
     return (
       <PreviewSuspense fallback={<p>Loading preview</p>}>
         {/* Preview goes here */}
-        <PreviewContent query={query} />
+        <PreviewContent albumQuery={albumQuery} />
       </PreviewSuspense>
     );
   }
 
   //Fetch Albums
-  const albums = await client.fetch(query);
+  const albums = await client.fetch(albumQuery);
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
