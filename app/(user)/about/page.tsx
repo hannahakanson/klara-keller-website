@@ -36,7 +36,7 @@ export default async function BioPage() {
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col md:w-2/5">
       {/* Bios goes here */}
       <Bio bios={bios} />
 

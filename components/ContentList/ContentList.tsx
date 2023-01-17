@@ -11,7 +11,7 @@ const ContentList = ({ content }: ContentListProps) => {
       {/* Content */}
       {content.map((content) => (
         <div key={content._id}>
-          <div className="relative w-full h-96 my-6">
+          <div className="relative w-96 h-96 my-6">
             <Image
               src={makeUrl(content.mainImage).url()}
               alt={content.title}
