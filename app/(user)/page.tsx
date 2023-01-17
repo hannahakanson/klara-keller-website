@@ -4,7 +4,7 @@ import { client } from "../../lib/sanity.client";
 
 import PreviewSuspense from "../../components/PreviewSuspense";
 import PreviewContent from "../../components/PreviewContent";
-import ContentList from "../../components/ContentList";
+import HeroContent from "../../components/HeroContent";
 import NewsList from "../../components/NewsList";
 
 //Fetch the data from sanity
@@ -38,7 +38,7 @@ export default async function HomePage() {
   return (
     <div>
       {/* Content goes here */}
-      <ContentList content={content} />
+      <HeroContent content={content} />
 
       {/* News goes here */}
     </div>

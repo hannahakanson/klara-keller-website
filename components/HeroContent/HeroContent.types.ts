@@ -1,5 +1,5 @@
 import { Content } from "../../typings";
 
-export type ContentListProps = {
+export type HeroContentProps = {
     content: Content[];
 }

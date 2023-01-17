@@ -4,7 +4,7 @@ import { usePreview } from "../../lib/sanity.preview";
 import { PreviewContentProps } from "./PreviewContent.types";
 
 //Components
-import ContentList from "../ContentList";
+import ContentList from "../HeroContent";
 import NewsList from "../NewsList";
 import ContactList from "../ContactList";
 import Bio from "../Bio";

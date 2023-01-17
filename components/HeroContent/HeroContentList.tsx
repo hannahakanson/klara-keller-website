@@ -1,10 +1,10 @@
 import Image from "next/image"
 
 import makeUrl from "../../lib/helpers";
-import { ContentListProps } from "./ContentList.types";
+import { HeroContentProps } from "./HeroContent.types";
 
 
-const ContentList = ({ content }: ContentListProps) => {
+const HeroContent = ({ content }: HeroContentProps) => {
 
   return (
     <div className="heroImage">
@@ -26,4 +26,4 @@ const ContentList = ({ content }: ContentListProps) => {
   );
 };
 
-export default ContentList;
+export default HeroContent;
