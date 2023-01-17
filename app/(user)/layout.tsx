@@ -9,13 +9,15 @@ export default function RootLayout({
 }) {
   return (
     <html className="bg-klara-pink">
-      <body className="min-h-screen bg-klara-pink relative">
+      <body className="min-h-screen relative">
         {" "}
         <header>
           <Navbar />
         </header>
         <div className="flex justify-center mb-40">
-          <div className="w-full mt-4 px-10 flex justify-center">{children}</div>
+          <div className="w-full mt-4 px-10 flex justify-center">
+            {children}
+          </div>
         </div>
         <Footer />
       </body>
