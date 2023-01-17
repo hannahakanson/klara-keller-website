@@ -1,5 +1,5 @@
-import { Content } from "../../typings";
+import { HeroContent } from "../../typings";
 
 export type HeroContentProps = {
-    content: Content[];
+    content: HeroContent[];
 }

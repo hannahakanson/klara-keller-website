@@ -14,6 +14,7 @@ export default defineType({
       name: "side",
       title: "Side",
       type: "string",
+      validation: (Rule) => Rule.max(1),
     }),
     defineField({
       name: "author",
@@ -34,7 +35,7 @@ export default defineType({
       title: "Songs",
       type: "array",
       of: [{ type: "string" }],
-      validation: (Rule) => Rule.unique().required().max(1)
+      validation: (Rule) => Rule.unique().required(),
     }),
     defineField({
       name: "publishedAt",

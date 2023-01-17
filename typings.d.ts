@@ -9,13 +9,13 @@ type Base = {
   _updatedAt: string;
 };
 
-interface Content extends Base {
+interface HeroContent extends Base {
   author: Author[];
-  body: Block[];
-  categories: Category[];
   mainImage: Image;
   title: string;
   description: string;
+  songs: string[];
+  side: string;
 }
 
 interface Author extends Base {
