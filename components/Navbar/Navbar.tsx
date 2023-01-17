@@ -4,22 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
+import { scrollToTop } from "../../lib/helpers";
 
 const Navbar = () => {
   //State for menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
-  
 
   useEffect(() => {
-       setIsMobile(window.matchMedia("(max-width: 600px)").matches)
-  }, [])
+    setIsMobile(window.matchMedia("(max-width: 600px)").matches);
+  }, []);
 
   //Disable scroll only on mobile when menu is open
   useEffect(() => {
     isMenuOpen && isMobile
       ? document.body.classList.add("overflow-hidden")
       : document.body.classList.remove("overflow-hidden");
+
+    scrollToTop();
   }, [isMenuOpen, isMobile]);
 
   //Menu links
@@ -36,7 +38,7 @@ const Navbar = () => {
     <div className="font-display flex justify-center items-center md:flex-col mb-1 space-x-2 py-5 h-20 my-5 mx-2 md:h-80">
       <Link href="/" className="flex-1 z-50 h-20 w-full relative">
         <Image
-          src="/../public/Klara-header.png"
+          src="/Klara-header-2.svg"
           alt="Klara Keller"
           className="object-contain"
           priority={true}
@@ -48,7 +50,7 @@ const Navbar = () => {
       <div className="menu">
         <div className="block w-full">
           <ul
-            className={`z-40 text-2xl fixed top-0 left-0 w-full h-full bg-indigo-900 py-5 md:justify-between md:flex md:flex-row md:items-center md:static md:top-0 md:bg-transparent ${
+            className={`z-40 text-4xl fixed top-0 left-0 w-full h-full bg-indigo-900 py-5 md:justify-between md:flex md:flex-row md:items-center md:static md:top-0 md:bg-transparent ${
               isMenuOpen
                 ? "flex flex-col justify-center items-center"
                 : "hidden"

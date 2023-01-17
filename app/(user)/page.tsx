@@ -41,7 +41,6 @@ export default async function HomePage() {
       <ContentList content={content} />
 
       {/* News goes here */}
-      <NewsList news={news} />
     </div>
   );
 }
