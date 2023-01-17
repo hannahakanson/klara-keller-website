@@ -38,7 +38,7 @@ const Navbar = () => {
     <div className="font-display flex justify-center items-center md:flex-col mb-1 space-x-2 py-5 h-20 my-5 mx-2 md:h-80">
       <Link href="/" className="flex-1 z-50 h-20 w-full relative">
         <Image
-          src="/Klara-header-2.svg"
+          src="/Klara-header.svg"
           alt="Klara Keller"
           className="object-contain"
           priority={true}
@@ -73,7 +73,7 @@ const Navbar = () => {
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="z-50 block flex-none mt-2 md:hidden w-10 h-10 relative">
         <Image
-          src="/../public/Klara-mobile-menu.png"
+          src={isMenuOpen ? "/Mobile-menu-open.svg" : "/Mobile-menu-closed.svg"}
           alt="menu"
           className="object-contain"
           fill
