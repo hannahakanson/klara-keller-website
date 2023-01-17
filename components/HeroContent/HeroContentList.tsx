@@ -11,7 +11,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
       {/* Content */}
       {content.map((content) => (
         <div key={content._id}>
-          <div className="relative w-96 h-96 my-6">
+          <div className="relative w-96 h-96 my-6 animate-spin-slow">
             <Image
               src={makeUrl(content.mainImage).url()}
               alt={content.title}

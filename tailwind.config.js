@@ -11,6 +11,9 @@ module.exports = {
         "klara-pink": "#C56C73",
         "klara-purple": "#4341B5",
       },
+      animation: {
+        "spin-slow": "spin 12s linear infinite",
+      },
     },
   },
   plugins: [require("daisyui")],
