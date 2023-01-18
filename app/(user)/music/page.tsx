@@ -10,7 +10,7 @@ import AlbumList from "../../../components/AlbumList";
 const albumQuery = groq`
 *[_type=='album'] {
     ...,
-} | order(_createdAt desc)`;
+} | order(_createdAt desc)`
 
 export default async function AlbumPage() {
   //IF YOU'RE IN PREVIEW MODE
