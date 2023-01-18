@@ -36,7 +36,7 @@ export default async function HomePage() {
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div>
+    <div className="w-full">
       {/* Content goes here */}
       <HeroContent content={content} />
 

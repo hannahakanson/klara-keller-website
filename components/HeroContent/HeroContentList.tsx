@@ -30,7 +30,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
   };
 
   return (
-    <div className="heroImage flex flex-col justify-center items-center">
+    <div className="heroImage flex flex-col justify-center items-center w-full">
       {/* Content */}
       {activeContent.content.map((content) => (
         <div
@@ -38,7 +38,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
           className="flex flex-col items-center justify-center">
           <div
             onClick={handleSwitchSide}
-            className="relative w-96 h-96 my-6 animate-spin-slow">
+            className="relative w-96 h-96 md:w-128 md:h-128 my-6 animate-spin-slow">
             <Image
               src={makeUrl(content.mainImage).url()}
               alt={content.title}

@@ -14,6 +14,12 @@ module.exports = {
       animation: {
         "spin-slow": "spin 12s linear infinite",
       },
+      height: {
+        128: "40rem",
+      },
+      width: {
+        128: "40rem",
+      },
     },
   },
   plugins: [require("daisyui")],
