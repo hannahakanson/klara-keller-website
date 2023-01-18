@@ -2,6 +2,8 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import "../../styles/globals.css";
 
+export const revalidate = 120; //Check for updates in CMS every 2 minutes
+
 export default function RootLayout({
   children,
 }: {
