@@ -10,7 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="bg-klara-pink">
+    <html className="bg-klara-pink dark">
       <body className="min-h-screen w-screen relative">
         <div className="overflow-x-hidden">
           {" "}
@@ -18,9 +18,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <div className="flex justify-center mb-40">
-            <div className="w-full mt-4 flex justify-center">
-              {children}
-            </div>
+            <div className="w-full mt-4 flex justify-center">{children}</div>
           </div>
         </div>
         <Footer />

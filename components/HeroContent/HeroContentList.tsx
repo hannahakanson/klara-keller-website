@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import makeUrl from "../../lib/helpers";
 import { HeroContentProps } from "./HeroContent.types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HeroContent } from "../../typings";
 
 const HeroContent = ({ content }: HeroContentProps) => {
@@ -18,8 +18,19 @@ const HeroContent = ({ content }: HeroContentProps) => {
     content: sideA,
   });
 
+    const [theme, setTheme] = useState("light");
+
+    useEffect(() => {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+    }, [theme]);
 
   const handleSwitchSide = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+    
     if(isSideA) {
       setActiveContent({content: sideB})
     }

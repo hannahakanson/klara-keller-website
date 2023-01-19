@@ -17,8 +17,13 @@
 body {
   color: #fff;
   font-family: "W95FA";
+  transition: background 0.25s ease-in-out;
 }
 
+/* Work around to get dark mode working */
+.dark {
+  background-color: #4341B5;
+}
 
 header {
   font-family: "Alpha Clouds", sans-serif;
