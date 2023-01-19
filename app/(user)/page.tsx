@@ -5,7 +5,7 @@ import { client } from "../../lib/sanity.client";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import PreviewContent from "../../components/PreviewContent";
 import HeroContent from "../../components/HeroContent";
-import NewsList from "../../components/NewsList";
+// import NewsList from "../../components/NewsList";
 
 //Fetch the data from sanity
 const heroQuery = groq`
@@ -21,7 +21,7 @@ const newsQuery = groq`
 
 export default async function HomePage() {
   const content = await client.fetch(heroQuery);
-  const news = await client.fetch(newsQuery);
+  // const news = await client.fetch(newsQuery);
 
   //IF YOU'RE IN PREVIEW MODE
   if (previewData()) {
@@ -41,6 +41,7 @@ export default async function HomePage() {
       <HeroContent content={content} />
 
       {/* News goes here */}
+      {/* <NewsContent news={news} /> */}
     </div>
   );
 }

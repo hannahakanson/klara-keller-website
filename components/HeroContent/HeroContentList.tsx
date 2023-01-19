@@ -30,7 +30,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
   };
 
   return (
-    <div className="heroImage flex flex-col justify-center items-center w-full">
+    <div className="heroImage flex flex-col justify-center items-center w-full px-4">
       {/* Content */}
       {activeContent.content.map((content) => (
         <div

@@ -6,7 +6,7 @@ import { AlbumListProps } from "./AlbumList.types";
 
 const AlbumList = ({ albums }: AlbumListProps) => {
   return (
-    <div className="w-full items-center justify-center flex flex-wrap flex-col md:flex-row">
+    <div className="w-full items-center justify-center flex flex-wrap flex-col md:flex-row md:px-10">
       {albums.map((album) => (
         <Link href={album.link} target="_blank" key={album._id}>
           <div className="relative h-full p-2 rounded-md hover:scale-110 transition ease-in-out delay-50 hover:-translate-y-1">
