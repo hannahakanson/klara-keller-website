@@ -21,10 +21,10 @@ const HeroContent = ({ content }: HeroContentProps) => {
 
   const handleSwitchSide = () => {
     if(isSideA) {
-      setActiveContent({content: sideA})
+      setActiveContent({content: sideB})
     }
     if (!isSideA) {
-      setActiveContent({ content: sideB });
+      setActiveContent({ content: sideA });
     }
     setIsSideA(!isSideA)
   };
@@ -47,15 +47,19 @@ const HeroContent = ({ content }: HeroContentProps) => {
               fill
             />
           </div>
-          <div>
+          <ul className="px-4">
             {content.songs.map((song, index) => (
-              <h2 key={index} className="text-5xl">{song}</h2>
+              <li key={index}>
+                <h2 key={index} className="text-5xl mt-4">
+                  {song}
+                </h2>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       ))}
       <p onClick={handleSwitchSide} className="pt-10 uppercase underline">
-        Switch to B
+        {isSideA ? "Switch to side B" : "Switch to side A"}
       </p>
     </div>
   );
