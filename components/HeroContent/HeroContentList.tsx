@@ -21,10 +21,10 @@ const HeroContent = ({ content }: HeroContentProps) => {
 
   const handleSwitchSide = () => {
     if(isSideA) {
-      setActiveContent({content: sideA})
+      setActiveContent({content: sideB})
     }
     if (!isSideA) {
-      setActiveContent({ content: sideB });
+      setActiveContent({ content: sideA });
     }
     setIsSideA(!isSideA)
   };
@@ -55,7 +55,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
         </div>
       ))}
       <p onClick={handleSwitchSide} className="pt-10 uppercase underline">
-        Switch to B
+        {isSideA ? "Switch to side B" : "Switch to side A"}
       </p>
     </div>
   );
