@@ -2,10 +2,10 @@ import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import { client } from "../../../src/lib/sanity.client";
 
-import PreviewSuspense from "../../../components/PreviewSuspense";
-import PreviewContent from "../../../components/PreviewContent";
-import Bio from "../../../components/Bio";
-import Milestones from "../../../components/Milestones";
+import PreviewSuspense from "../../../src/components/PreviewSuspense";
+import PreviewContent from "../../../src/components/PreviewContent";
+import Bio from "../../../src/components/Bio";
+import Milestones from "../../../src/components/Milestones";
 
 //Fetch the data from sanity
 const bioQuery = groq`

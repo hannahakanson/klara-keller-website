@@ -2,9 +2,9 @@ import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import { client } from "../../src/lib/sanity.client";
 
-import PreviewSuspense from "../../components/PreviewSuspense";
-import PreviewContent from "../../components/PreviewContent";
-import HeroContent from "../../components/HeroContent";
+import PreviewSuspense from "../../src/components/PreviewSuspense";
+import PreviewContent from "../../src/components/PreviewContent";
+import HeroContent from "../../src/components/HeroContent";
 // import NewsList from "../../components/NewsList";
 
 //Fetch the data from sanity

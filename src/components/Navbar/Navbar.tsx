@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
-import { scrollToTop } from "../../src/lib/helpers";
-import { useThemeContext } from "../../src/Contexts/ThemeContext";
+import { scrollToTop } from "../../lib/helpers";
+import { useThemeContext } from "../../Contexts/ThemeContext";
 
 const Navbar = () => {
   //State for menu
