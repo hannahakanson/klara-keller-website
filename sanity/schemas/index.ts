@@ -7,6 +7,7 @@ import contact from "./contact";
 import bio from "./bio";
 import album from "./album";
 import author from "./author";
+import song from "./song";
 
 export const schemaTypes = [
   heroContent,
@@ -18,4 +19,5 @@ export const schemaTypes = [
   bio,
   milestone,
   contact,
+  song
 ];

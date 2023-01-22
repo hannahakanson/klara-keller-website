@@ -10,9 +10,9 @@ const ContactList = ({ contacts }: ContactListProps) => {
           </div>
 
           <div className="w-full flex flex-col justify-between p-4">
-            <div className="text-xl">{contact.name}</div>
-            <div>{contact.email}</div>
-            <div>{contact.number}</div>
+            <p className="text-xl">{contact.name}</p>
+            <p>{contact.email}</p>
+            <p>{contact.number}</p>
           </div>
         </div>
       ))}

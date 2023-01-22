@@ -21,6 +21,7 @@ export default function PreviewContent({
   albumQuery,
   concertQuery,
 }: PreviewContentProps) {
+  // Check to get the right content for each query
   if (heroQuery && newsQuery) {
     const content = usePreview(null, heroQuery);
     const news = usePreview(null, newsQuery);

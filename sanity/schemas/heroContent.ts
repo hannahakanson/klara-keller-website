@@ -34,7 +34,7 @@ export default defineType({
       name: "songs",
       title: "Songs",
       type: "array",
-      of: [{ type: "string" }],
+      of: [{ type: "song" }],
       validation: (Rule) => Rule.unique().required(),
     }),
     defineField({

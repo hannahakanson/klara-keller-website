@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import makeUrl from "../../lib/helpers";
 import { BioProps } from "./Bio.types";
 
 const Bio = ({ bios }: BioProps) => {

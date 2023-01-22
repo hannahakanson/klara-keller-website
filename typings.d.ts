@@ -14,8 +14,13 @@ interface HeroContent extends Base {
   mainImage: Image;
   title: string;
   description: string;
-  songs: string[];
+  songs: Song[];
   side: string;
+}
+
+interface Song {
+  title: string;
+  link: string;
 }
 
 interface Author extends Base {
@@ -103,9 +108,4 @@ interface Category extends Base {
 interface MainImage {
   _type: "image";
   asset: Reference;
-}
-
-interface Title {
-  _type: "string";
-  current: string;
 }
