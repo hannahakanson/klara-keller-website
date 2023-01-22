@@ -28,7 +28,7 @@ export default async function ContactPage() {
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div className="flex flex-col md:w-2/5">
+    <div className="w-full flex flex-col md:w-2/5">
       {/* Contacts goes here */}
       <ContactList contacts={contacts} />
     </div>

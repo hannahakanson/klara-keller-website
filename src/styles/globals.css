@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: "W95FA";
-  src: url("../public/fonts/W95FA.otf") format("truetype");
+  src: url("../../public/fonts/W95FA.otf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Alpha Clouds";
-  src: url("../public/fonts/Alphasmoke.ttf") format("truetype");
+  src: url("../../public/fonts/Alphasmoke.ttf") format("truetype");
   font-weight: 700;
 }
 
@@ -19,6 +19,14 @@ body {
   font-family: "W95FA";
 }
 
+html {
+  transition: background 0.25s ease-in-out;
+}
+
+/* Work around to get dark mode working */
+.dark {
+  background-color: #4341B5;
+}
 
 header {
   font-family: "Alpha Clouds", sans-serif;

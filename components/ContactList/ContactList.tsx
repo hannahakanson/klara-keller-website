@@ -2,10 +2,10 @@ import { ContactListProps } from "./ContactList.types";
 
 const ContactList = ({ contacts }: ContactListProps) => {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col p-4">
       {contacts.map((contact) => (
         <div key={contact._id}>
-          <div className="divider text-s uppercase">
+          <div className="divider text-sm uppercase">
             <h2>{contact.title}</h2>
           </div>
 

@@ -5,13 +5,16 @@ import Image from "next/image";
 
 import { useEffect, useState } from "react";
 import { scrollToTop } from "../../lib/helpers";
+import { useThemeContext } from "../../ThemeContext";
 
 const Navbar = () => {
   //State for menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
+  const { theme } : any = useThemeContext();
 
   useEffect(() => {
+    //Check if it is mobile
     setIsMobile(window.matchMedia("(max-width: 600px)").matches);
   }, []);
 
@@ -50,11 +53,14 @@ const Navbar = () => {
       <div className="menu">
         <div className="block w-full">
           <ul
-            className={`z-40 text-4xl fixed top-0 left-0 w-full h-full bg-indigo-900 py-5 md:justify-between md:flex md:flex-row md:items-center md:static md:top-0 md:bg-transparent ${
+            className={`z-40 text-4xl fixed top-0 left-0 w-full h-full py-5 md:justify-between md:flex md:flex-row md:items-center md:static md:top-0 md:bg-transparent ${
+              theme === "dark" ? "bg-klara-purple" : "bg-klara-pink"
+            } ${
               isMenuOpen
-                ? "flex flex-col justify-center items-center"
+                ? `flex flex-col justify-center items-center`
                 : "hidden"
-            }`}>
+            }
+          `}>
             {menuLinks.map((link, i) => (
               <li key={i} className="space-x-12 md:px-4">
                 <Link

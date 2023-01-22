@@ -5,28 +5,32 @@ import makeUrl from "../../lib/helpers";
 import { HeroContentProps } from "./HeroContent.types";
 import { useState } from "react";
 import { HeroContent } from "../../typings";
+import { useThemeContext } from "../../ThemeContext";
 
 const HeroContent = ({ content }: HeroContentProps) => {
+  const sideAContent = content.filter((object) => object.side === "A");
+  const sideBContent = content.filter((object) => object.side === "B");
 
-  const sideA = content.filter((object) => object.side === "A");
-  const sideB = content.filter((object) => object.side === "B");
-
-  const [isSideA, setIsSideA] = useState(true);
   const [activeContent, setActiveContent] = useState<{
-    content: HeroContent[]
+    content: HeroContent[];
   }>({
-    content: sideA,
+    content: sideAContent
   });
 
+  const { setTheme, sideA, setSideA }: any = useThemeContext();
 
   const handleSwitchSide = () => {
-    if(isSideA) {
-      setActiveContent({content: sideB})
+    if (sideA) {
+      setActiveContent({ content: sideBContent });
+      document.documentElement.classList.remove("dark");
+      setTheme("light");
     }
-    if (!isSideA) {
-      setActiveContent({ content: sideA });
+    if (!sideA) {
+      setActiveContent({ content: sideAContent });
+      document.documentElement.classList.add("dark");
+      setTheme("dark");
     }
-    setIsSideA(!isSideA)
+    setSideA(!sideA);
   };
 
   return (
@@ -59,7 +63,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
         </div>
       ))}
       <p onClick={handleSwitchSide} className="pt-10 uppercase underline">
-        {isSideA ? "Switch to side B" : "Switch to side A"}
+        {sideA ? "Switch to side B" : "Switch to side A"}
       </p>
     </div>
   );

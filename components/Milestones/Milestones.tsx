@@ -4,9 +4,14 @@ import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 import makeUrl from "../../lib/helpers";
+import { useThemeContext } from "../../ThemeContext";
 import { MilestonesProps } from "./Milestones.types";
 
 const Milestones = ({ milestones }: MilestonesProps) => {
+  //Get theme
+  const { theme }: any = useThemeContext();
+
+  //Object for slides
   const slides = milestones.map((milestone) => {
     return {
       url: makeUrl(milestone.mainImage).url(),
@@ -15,8 +20,10 @@ const Milestones = ({ milestones }: MilestonesProps) => {
     };
   });
 
+  // State for current index
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  //Function for switching slides
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -66,7 +73,7 @@ const Milestones = ({ milestones }: MilestonesProps) => {
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full bg-center bg-cover duration-500 relative">
         {" "}
-        <div className="p-4 text-lg w-full bg-klara-purple absolute top-0 flex justify-center">
+        <div className={`p-4 text-lg w-full absolute top-0 flex justify-center ${theme === "dark" ? "bg-klara-pink" : "bg-klara-purple"}`}>
           <h2>{slides[currentIndex].desc}</h2>
         </div>
       </div>
