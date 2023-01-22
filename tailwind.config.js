@@ -5,11 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
-  darkmode: 'class',
+  darkmode: "class",
   theme: {
     extend: {
       colors: {
-        "klara-pink": "#CC338F",
+        "klara-pink": "#D0767B",
         "klara-purple": "#4341B5",
       },
       animation: {

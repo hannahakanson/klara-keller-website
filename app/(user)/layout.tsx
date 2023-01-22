@@ -1,6 +1,9 @@
+"use client"
+
+import ThemeContextProvider from "../../ThemeContext";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import "../../styles/globals.css";
+import "../../src/styles/globals.css";
 
 export const revalidate = 120; //Check for updates in CMS every 2 minutes
 
@@ -14,12 +17,14 @@ export default function RootLayout({
       <body className="min-h-screen w-screen relative">
         <div className="overflow-x-hidden">
           {" "}
-          <header>
-            <Navbar />
-          </header>
-          <div className="flex justify-center mb-40">
-            <div className="w-full mt-4 flex justify-center">{children}</div>
-          </div>
+          <ThemeContextProvider>
+            <header>
+              <Navbar />
+            </header>
+            <div className="flex justify-center mb-40">
+              <div className="w-full mt-4 flex justify-center">{children}</div>
+            </div>
+          </ThemeContextProvider>
         </div>
         <Footer />
       </body>

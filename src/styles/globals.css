@@ -4,19 +4,22 @@
 
 @font-face {
   font-family: "W95FA";
-  src: url("../public/fonts/W95FA.otf") format("truetype");
+  src: url("../../public/fonts/W95FA.otf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Alpha Clouds";
-  src: url("../public/fonts/Alphasmoke.ttf") format("truetype");
+  src: url("../../public/fonts/Alphasmoke.ttf") format("truetype");
   font-weight: 700;
 }
 
 body {
   color: #fff;
   font-family: "W95FA";
+}
+
+html {
   transition: background 0.25s ease-in-out;
 }
 
