@@ -1,6 +1,6 @@
 "use client";
 
-import { usePreview } from "../../lib/sanity.preview";
+import { usePreview } from "../../src/lib/sanity.preview";
 import { PreviewContentProps } from "./PreviewContent.types";
 
 //Components

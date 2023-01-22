@@ -1,6 +1,6 @@
 "use client"
 
-import ThemeContextProvider from "../../ThemeContext";
+import ThemeContextProvider from "../../src/Contexts/ThemeContext";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import "../../src/styles/globals.css";

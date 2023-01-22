@@ -1,4 +1,4 @@
-import { Contact } from "../../typings";
+import { Contact } from "../../sanity/typings";
 
 export type ContactListProps = {
   contacts: Contact[];

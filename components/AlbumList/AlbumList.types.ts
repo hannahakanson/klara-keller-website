@@ -1,4 +1,4 @@
-import { Album } from "../../typings";
+import { Album } from "../../sanity/typings";
 
 export type AlbumListProps = {
   albums: Album[];

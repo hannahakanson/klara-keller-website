@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NewsListProps } from "./NewsList.types";
-import makeUrl from "../../lib/helpers";
+import makeUrl from "../../src/lib/helpers";
 
 const NewsList = ({ news }: NewsListProps) => {
   return (

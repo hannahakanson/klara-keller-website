@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import makeUrl from "../../lib/helpers";
+import makeUrl from "../../src/lib/helpers";
 import { AlbumListProps } from "./AlbumList.types";
 
 const AlbumList = ({ albums }: AlbumListProps) => {
