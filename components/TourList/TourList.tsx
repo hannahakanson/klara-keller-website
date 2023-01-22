@@ -3,7 +3,7 @@ import { TourListProps } from "./TourList.types";
 
 const TourList = ({ tour }: TourListProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full p-4">
       {tour.length > 0 ? (
         tour.map((concert) => (
           <div

@@ -17,10 +17,6 @@ const AlbumList = ({ albums }: AlbumListProps) => {
                 fill
                 className="object-cover"
               />
-              {/* !! Fix this */}
-              {/* <div className="hover:visible invisible absolute inset-0 flex items-center justify-center text-white font-bold text-lg bg-opacity-75 bg-black">
-                {album.title}
-              </div> */}
             </div>
           </div>
         </Link>

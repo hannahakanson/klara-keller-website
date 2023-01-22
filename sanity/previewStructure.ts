@@ -8,6 +8,7 @@ export const getDefaultDocumentNode: DefaultDocumentNodeResolver = (
   { schemaType }
 ) => {
 
+  //Controlling the routing in preview mode
   switch(schemaType) {
   case "heroContent" && "news":
     route = ""

@@ -9,17 +9,22 @@ import { useThemeContext } from "../../ThemeContext";
 import Link from "next/link";
 
 const HeroContent = ({ content }: HeroContentProps) => {
+
+  //Sort out the two different album sides
   const sideAContent = content.filter((object) => object.side === "A");
   const sideBContent = content.filter((object) => object.side === "B");
 
+  //State for active content
   const [activeContent, setActiveContent] = useState<{
     content: HeroContent[];
   }>({
     content: sideAContent
   });
 
+  //Theme
   const { setTheme, sideA, setSideA }: any = useThemeContext();
 
+  //Handle the switch of theme and set active content
   const handleSwitchSide = () => {
     if (sideA) {
       setActiveContent({ content: sideBContent });
@@ -65,6 +70,7 @@ const HeroContent = ({ content }: HeroContentProps) => {
           </ul>
         </div>
       ))}
+      {/* Switch sides + theme */}
       <p onClick={handleSwitchSide} className="pt-10 uppercase underline">
         {sideA ? "Switch to side B" : "Switch to side A"}
       </p>

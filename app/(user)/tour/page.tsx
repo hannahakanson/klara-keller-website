@@ -28,7 +28,7 @@ export default async function TourPage() {
 
   //IF YOU'RE NOT IN PREVIEW MODE
   return (
-    <div className="flex flex-col md:w-2/5">
+    <div className="w-full flex flex-col md:w-2/5">
       {/* Tour goes here */}
       <TourList tour={tour} />
     </div>

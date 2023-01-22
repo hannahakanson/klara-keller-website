@@ -109,8 +109,3 @@ interface MainImage {
   _type: "image";
   asset: Reference;
 }
-
-interface Title {
-  _type: "string";
-  current: string;
-}
