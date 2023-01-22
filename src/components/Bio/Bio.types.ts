@@ -1,4 +1,4 @@
-import { Bio } from '../../typings'
+import { Bio } from '../../sanity/typings'
 
 export type BioProps = {
     bios: Bio[];

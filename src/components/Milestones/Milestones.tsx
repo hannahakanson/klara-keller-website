@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 import makeUrl from "../../lib/helpers";
-import { useThemeContext } from "../../ThemeContext";
+import { useThemeContext } from "../../Contexts/ThemeContext";
 import { MilestonesProps } from "./Milestones.types";
 
 const Milestones = ({ milestones }: MilestonesProps) => {

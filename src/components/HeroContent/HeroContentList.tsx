@@ -4,8 +4,8 @@ import Image from "next/image";
 import makeUrl from "../../lib/helpers";
 import { HeroContentProps } from "./HeroContent.types";
 import { useState } from "react";
-import { HeroContent } from "../../typings";
-import { useThemeContext } from "../../ThemeContext";
+import { HeroContent } from "../../sanity/typings";
+import { useThemeContext } from "../../Contexts/ThemeContext";
 import Link from "next/link";
 
 const HeroContent = ({ content }: HeroContentProps) => {

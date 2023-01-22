@@ -1,8 +1,8 @@
 "use client"
 
-import ThemeContextProvider from "../../ThemeContext";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import ThemeContextProvider from "../../src/Contexts/ThemeContext";
+import Footer from "../../src/components/Footer";
+import Navbar from "../../src/components/Navbar";
 import "../../src/styles/globals.css";
 
 export const revalidate = 120; //Check for updates in CMS every 2 minutes
