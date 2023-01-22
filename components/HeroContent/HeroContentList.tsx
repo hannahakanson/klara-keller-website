@@ -6,6 +6,7 @@ import { HeroContentProps } from "./HeroContent.types";
 import { useState } from "react";
 import { HeroContent } from "../../typings";
 import { useThemeContext } from "../../ThemeContext";
+import Link from "next/link";
 
 const HeroContent = ({ content }: HeroContentProps) => {
   const sideAContent = content.filter((object) => object.side === "A");
@@ -53,10 +54,12 @@ const HeroContent = ({ content }: HeroContentProps) => {
           </div>
           <ul className="px-4">
             {content.songs.map((song, index) => (
-              <li key={index}>
+              <li key={index} className="hover:underline">
+                <Link href={song.link} target="_blank">
                 <h2 key={index} className="text-5xl mt-4">
-                  {song}
+                  {song.title}
                 </h2>
+                </Link>
               </li>
             ))}
           </ul>
